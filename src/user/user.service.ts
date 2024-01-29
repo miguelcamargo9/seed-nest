@@ -13,7 +13,8 @@ export class UserService {
   ) {}
 
   create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+    const user = this.usersRepository.create(createUserDto);
+    return this.usersRepository.save(user);
   }
 
   findAll(): Promise<User[]> {
@@ -25,7 +26,7 @@ export class UserService {
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+    return this.usersRepository.update(id, updateUserDto);
   }
 
   async remove(id: number): Promise<void> {
