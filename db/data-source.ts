@@ -8,7 +8,7 @@ export const dataSourceOptions: DataSourceOptions = {
   password: 'notsecret',
   database: 'nest-template',
   entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-  migrations: [__dirname + '/migration/*{.ts,.js}'],
+  migrations: [__dirname + '/../db/migration/*{.ts,.js}'],
 };
 
 const dataSource = new DataSource(dataSourceOptions);
