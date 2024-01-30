@@ -5,6 +5,7 @@ import { QueryFailedExceptionFilter } from './filters/query-failed-exception.fil
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
   app.useGlobalFilters(new QueryFailedExceptionFilter());
   app.useGlobalPipes(
     new ValidationPipe({
